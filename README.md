@@ -7,4 +7,4 @@ Free Code Camp Project - Local Weather App
 2. I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
 3. I can push a button to toggle between Fahrenheit and Celsius.
 
-Incomplete - []()
+Completed - [Local Weather App](https://cazyw.github.io/localWeather/)

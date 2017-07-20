@@ -9,23 +9,46 @@
     <title>Weather App</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="weather.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Indie+Flower" rel="stylesheet">
+    <link href="css\weather.css" rel="stylesheet">
+    <link href="css\weather-icons.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="authorship" class="text-right"><a href="http://cazyw.github.io" target="_blank">Created by Carol Wong</a></div>
+    <div class="page-header text-center">
+        <h1>Local Weather App </br><small> What's the weather in your area?</small></h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+                <div class="jumbotron text-center">
+                    <div id="loading-weather"><i class="fa fa-refresh fa-spin"></i> </br>Getting the weather... </div>
+                    <div id="weather-box" class="hide-item">
+                    <div id="place" class="info"></div>
+                    <div id="weather" class="info"></div>
+                    <div class="info"><i id="weather-icon" class="wi"></i></div>
+                    <span id="temperature"></span><span id="scale"></span>
+                    <div class="info"><button id="temp-button" class="btn btn-primary ">What's it in Farenheit</button></div>
+                    <div id="time" class="info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     
-    <div>
-        <button id="weatherButton" class="btn btn-primary"><i class="fa fa-refresh"></i> Get Weather</button>
-    </div>
-    <div id="location"></div>
-    <div id="weather"></div>
-    <div id="temperature"></div>
+        
+    
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="weather.js"></script>
-
+    <script src="js\moment.js"></script>
+    <script src="js\weather.js"></script>
+    
 </body>
 </html>
