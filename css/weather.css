@@ -77,4 +77,8 @@ div#time {
     .info {
         padding: 5px 0px 5px 0px;
     }
+
+    .page-header {
+        margin-top: 10px;
+    }
 }
