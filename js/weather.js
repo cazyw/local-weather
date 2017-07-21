@@ -28,7 +28,7 @@ function getWeather(){
             var errorMessage = "Please turn on geolocation";
             $("#error-box").html(errorMessage);
             $("#weather-button").removeClass("hide-item");
-    });
+    },{timeout:3000});
     
     } 
     
