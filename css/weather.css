@@ -41,6 +41,10 @@ a:focus {
     outline: none;
 }
 
+#error-box {
+    font-size: 1em;
+}
+
 #authorship {
     padding: 20px 20px 0px 0px;
 }
@@ -48,6 +52,12 @@ a:focus {
 #temp-button {
     background-color: #000;
 }
+
+#weather-button {
+    background-color: #000;
+    border-color: #000;
+}
+
 
 div#time {
     font-size: 0.5em;

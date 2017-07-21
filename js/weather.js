@@ -1,9 +1,8 @@
 function getWeather(){
-    if (navigator.geolocation) {
+    if (navigator && navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude
-            $("#weather-button").html("<i class='fa fa-refresh'></i> Got Weather");
             var link = "https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude;
             $.getJSON(link, function(json) {                
                 var weather = json["weather"][0]["description"];
@@ -17,14 +16,21 @@ function getWeather(){
                 $("#scale").html(" \'C");
                 $("#place").html(place + " " + country);
                 $("#weather-icon").addClass("wi-owm-"+weatherID);
-                $("#loading-weather").css('display', 'none');
+                $("#loading-weather").addClass("hide-item");
+                $("#weather-button").removeClass("hide-item");
                 $("#time").html(now.format('MMMM Do YYYY, h:mm:ss a')); 
                 $("#weather-box").fadeIn();
             });
 
-        });
+        },function(error){
+            //use error.code to determine what went wrong
+            $("#loading-weather").addClass("hide-item");
+            var errorMessage = "Please turn on geolocation";
+            $("#error-box").html(errorMessage);
+            $("#weather-button").removeClass("hide-item");
+    });
     
-    }
+    } 
     
 }
 
@@ -47,7 +53,13 @@ function convertTemp(){
 $(document).ready(function(){
     getWeather();
     $("#weather-button").on("click", function(){
-        $("#weather-button").html("<i class='fa fa-refresh fa-spin'></i> Getting Weather");
+         $("#error-box").html("");
+        $("#weather-button").addClass("hide-item");
+        $("#weather-box").fadeOut(300, function(){
+            $("#loading-weather").removeClass("hide-item");
+        });
+        
+        //$("#weather-button").html("<i class='fa fa-refresh fa-spin'></i> Getting the weather ...");
         getWeather();
     });
 
