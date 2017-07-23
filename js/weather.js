@@ -25,10 +25,10 @@ function getWeather(){
         },function(error){
             //use error.code to determine what went wrong
             $("#loading-weather").addClass("hide-item");
-            var errorMessage = "Please turn on geolocation";
+            var errorMessage = "Please turn on geolocation (timed-out)";
             $("#error-box").html(errorMessage);
             $("#weather-button").removeClass("hide-item");
-    },{timeout:5000});
+    },{timeout:10000});
     
     } 
     
